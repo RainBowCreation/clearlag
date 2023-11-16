@@ -1,4 +1,4 @@
-# This mod Is a Rework version of ClearLag mod
+# This mod Is a Rework version of [ClearLag](https://www.curseforge.com/minecraft/mc-mods/k-clear-lag) mod
 
 ## Versions
 - This mod work in forge 1.12.2
