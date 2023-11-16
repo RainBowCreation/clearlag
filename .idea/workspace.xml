@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbfd5a2a-02fa-45ae-91c4-2fc1ab82b24f" name="Changes" comment="Update Config">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/utils/Packet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/clearlag.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/clearlag.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/utils/Confighandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/utils/Confighandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/utils/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/utils/Time.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/utils/Confighandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/Confighandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/utils/Packet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/utils/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/Reference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/utils/Teleport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/serverExtension/utils/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/Time.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,20 +77,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;1.12.2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/gg&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.18164062&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.61290324&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/gg",
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.18164062",
+    "project.structure.side.proportion": "0.61290324",
+    "settings.editor.selected.configurable": "discord-application"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\deaProjects\server-extension\run\mods" />

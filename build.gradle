@@ -13,9 +13,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.12.2-2-server'
+version = '1.12.2-v1'
 group = 'net.rainbowcreation' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'RBCextension'
+archivesBaseName = 'RBCclearlag'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
@@ -92,7 +92,7 @@ jar {
             "Implementation-Version": "${version}",
             "Implementation-Vendor" :"examplemodsareus",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-            "Main-Class": "net.rainbowcreation.serverExtension.main"
+            "Main-Class": "net.rainbowcreation.clearlag.main"
         ])
     }
 }

@@ -1,20 +1,14 @@
-package net.rainbowcreation.serverExtension.utils;
+package net.rainbowcreation.clearlag.utils;
 
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.network.play.server.SPacketTitle;
 import net.minecraft.server.management.PlayerList;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 
-import java.time.ZoneId;
-import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Time {
-    public static String offset;
-    public static String prefix;
     public static int TIME;
     public static int WARNING_TIME;
     public static List<Integer> WARNING_TIME_LIST = new ArrayList<>();
@@ -22,7 +16,7 @@ public class Time {
     public static int[] getCurrentTime() {
         int[] lst = new int[3];
 
-        ZonedDateTime time = ZonedDateTime.now(ZoneId.ofOffset(prefix, ZoneOffset.of(offset)));
+        ZonedDateTime time = ZonedDateTime.now();
         lst[0] = time.getHour();
         lst[1] = time.getMinute();
         lst[2] = time.getSecond();
@@ -77,29 +71,6 @@ public class Time {
         return true;
     }
 
-    public static Boolean alert(int timeRemaining, String prefix, String str, PlayerList playerList, Boolean actionbar) {
-        if (!actionbar)
-            return alert(timeRemaining, prefix, str, playerList);
-        if (!WARNING_TIME_LIST.contains(timeRemaining))
-            return false;
-        int[] lst = Time.secondToTime(timeRemaining);
-        TextComponentString title = new TextComponentString(TextFormatting.BOLD + prefix);
-        TextComponentString substitle = new TextComponentString(str + " ");
-        if (lst[0] > 0)
-            substitle.appendSibling(new TextComponentString(TextFormatting.RED + String.valueOf(lst[0]) + TextFormatting.RESET + " hours"));
-        if (lst[1] > 0)
-            substitle.appendSibling(new TextComponentString(TextFormatting.RED + String.valueOf(lst[1]) + TextFormatting.RESET + " minutes"));
-        if (lst[2] > 0)
-            substitle.appendSibling(new TextComponentString(TextFormatting.RED + String.valueOf(lst[2]) + TextFormatting.RESET + " seconds"));
-        substitle.appendText("!!.");
-        List<EntityPlayerMP> playerMPS = playerList.getPlayers();
-        for (EntityPlayerMP playerMP : playerMPS) {
-            Packet.sent(playerMP, title, SPacketTitle.Type.TITLE, 0, 100, 0);
-            Packet.sent(playerMP, substitle, SPacketTitle.Type.SUBTITLE, 0, 100, 0);
-        }
-        return true;
-    }
-
     public static Boolean alert(int[] timeTarget, String prefix, String str, PlayerList playerList) {
         int timeRemaining = getSubstractInSecond(timeTarget, getCurrentTime());
         if (!WARNING_TIME_LIST.contains(timeRemaining))
@@ -114,30 +85,6 @@ public class Time {
             text.appendSibling(new TextComponentString(" " + TextFormatting.RED + lst[2] + TextFormatting.RESET + " seconds"));
         text.appendText("!!.");
         playerList.sendMessage(text);
-        return true;
-    }
-
-    public static Boolean alert(int[] timeTarget, String prefix, String str, PlayerList playerList, Boolean actionbar) {
-        if (!actionbar)
-            return alert(timeTarget, prefix, str, playerList);
-        int timeRemaining = getSubstractInSecond(timeTarget, getCurrentTime());
-        if (!WARNING_TIME_LIST.contains(timeRemaining))
-            return false;
-        int[] lst = Time.secondToTime(timeRemaining);
-        TextComponentString title = new TextComponentString(TextFormatting.BOLD + prefix);
-        TextComponentString substitle = new TextComponentString(str + " " );
-        if (lst[0] > 0)
-            substitle.appendSibling(new TextComponentString(TextFormatting.RED + String.valueOf(lst[0]) + TextFormatting.RESET + " hours"));
-        if (lst[1] > 0)
-            substitle.appendSibling(new TextComponentString(TextFormatting.RED + String.valueOf(lst[1]) + TextFormatting.RESET + " minutes"));
-        if (lst[2] > 0)
-            substitle.appendSibling(new TextComponentString(TextFormatting.RED + String.valueOf(lst[2]) + TextFormatting.RESET + " seconds"));
-        substitle.appendText("!!.");
-        List<EntityPlayerMP> playerMPS = playerList.getPlayers();
-        for (EntityPlayerMP playerMP : playerMPS) {
-            playerMP.connection.sendPacket(new SPacketTitle(SPacketTitle.Type.TITLE, title, 0, 100, 0));
-            playerMP.connection.sendPacket(new SPacketTitle(SPacketTitle.Type.SUBTITLE, substitle, 0, 100, 0));
-        }
         return true;
     }
 }
