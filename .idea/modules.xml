@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/extension.main.iml" filepath="$PROJECT_DIR$/.idea/modules/extension.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/extension.test.iml" filepath="$PROJECT_DIR$/.idea/modules/extension.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server-extension.main.iml" filepath="$PROJECT_DIR$/.idea/modules/server-extension.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server-extension.test.iml" filepath="$PROJECT_DIR$/.idea/modules/server-extension.test.iml" />
     </modules>
