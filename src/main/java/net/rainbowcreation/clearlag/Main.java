@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.rainbowcreation.clearlag.utils.Confighandler;
+import net.rainbowcreation.clearlag.config.GeneralConfig;
 import net.rainbowcreation.clearlag.utils.IString;
 import net.rainbowcreation.clearlag.utils.Reference;
 
@@ -24,7 +24,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Arrays;
 import java.util.List;
 
-import static net.rainbowcreation.clearlag.utils.Confighandler.settings;
+import static net.rainbowcreation.clearlag.config.GeneralConfig.settings;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, serverSideOnly = true, acceptableRemoteVersions = "*")
 @Mod.EventBusSubscriber(modid = Reference.MODID)
@@ -50,7 +50,7 @@ public class Main {
         Time.TIME = Time.getTimeInSecond(settings.TIME);
         staticTime = Time.TIME;
         timeRemaining = staticTime;
-        whitelist = Arrays.asList(Confighandler.whitelist.ITEM_WHITELIST);
+        whitelist = Arrays.asList(GeneralConfig.whitelist.ITEM_WHITELIST);
         Time.WARNING_TIME = Time.getTimeInSecond(settings.WARNING_TIME);
         int i = Time.WARNING_TIME;
         while (i > 10) {
