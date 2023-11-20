@@ -7,16 +7,19 @@ import net.minecraft.server.management.PlayerList;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.rainbowcreation.clearlag.utils.Confighandler;
+import net.rainbowcreation.clearlag.utils.IString;
 import net.rainbowcreation.clearlag.utils.Reference;
 
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.rainbowcreation.clearlag.utils.Time;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,7 +28,8 @@ import static net.rainbowcreation.clearlag.utils.Confighandler.settings;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, serverSideOnly = true, acceptableRemoteVersions = "*")
 @Mod.EventBusSubscriber(modid = Reference.MODID)
-public class main {
+public class Main {
+    public static Logger LOGGER = FMLLog.log;
     private static int staticTime;
     private static int timeRemaining;
     private static int[] timePrevious;
@@ -36,17 +40,13 @@ public class main {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        List<String> header = Arrays.asList("######################################################################################",
-                "#  _____       _       ____                 _____                _   _               #",
-                "# |  __ \\     (_)     |  _ \\               / ____|              | | (_)              #",
-                "# | |__) |__ _ _ _ __ | |_) | _____      _| |     _ __ ___  __ _| |_ _  ___  _  __   #",
-                "# |  _  // _` | | '_ \\|  _ < / _ \\ \\ /\\ / / |    | '__/ _ \\/ _`  | __| |/ _ \\| '_ \\  #",
-                "# | | \\ \\ (_| | | | | | |_) | (_) \\ V  V /| |____|  | |  __/ (_| | |_| | (_) | | | | #",
-                "# |_|  \\_\\__,_|_|_| |_|____/ \\___/ \\_/\\_/  \\_____|_|  \\___|\\__,_|\\__|_|\\___/|_|  |_| #",
-                "#                                                                                    #",
-                "#######################################################################clearlag#######");
-        for (String txt : header)
-            System.out.println(txt);
+        LOGGER = event.getModLog();
+        if (!settings.CLEAR_ITEM)
+            return;
+        for (String txt : Reference.HEADER) {
+            LOGGER.info(txt);
+        }
+        LOGGER.info(IString.genHeader(Reference.NAME+":"+Reference.VERSION));
         Time.TIME = Time.getTimeInSecond(settings.TIME);
         staticTime = Time.TIME;
         timeRemaining = staticTime;
@@ -95,6 +95,13 @@ public class main {
             }
         }
         playerList.sendMessage(new TextComponentString(TextFormatting.BOLD + "[Clear Lag] " + TextFormatting.RESET + "Cleared " + TextFormatting.RED  + amount + TextFormatting.RESET + " items."));
+        if (settings.GIFT) {
+            for (EntityPlayerMP playerMP : plist) {
+                playerMP.addExperience(settings.EXP);
+            }
+            String text = settings.GIFT_MESSAGE;
+            playerList.sendMessage(new TextComponentString(TextFormatting.BOLD + "[Gift] " + TextFormatting.RESET + text.replace("{EXP}", String.valueOf(settings.EXP)).replace("{TIME}", String.valueOf(Time.getTimeInSecond(settings.TIME)))));
+        }
         timeRemaining = staticTime;
     }
 }
