@@ -23,22 +23,6 @@ public class GeneralConfig {
         @Comment({"Set to false to disable item clearing"})
         public boolean CLEAR_ITEM = true;
 
-        @Comment({"Should player get exps after clear lag? (default false)"})
-        public boolean GIFT = false;
-
-        @Comment({"Amount of exp give to player each round (Default 10)"})
-        public int EXP = 10;
-
-        @Comment({"Message sent to player after recieved exp (use {EXP} to replace with exp amount , {TIME} to replace with time in second"})
-        public String GIFT_MESSAGE = "{TIME} seconds has passed, Here was {EXP}exp for you, Thank you for playing our server";
-
-    }
-
-    public static Whitelist whitelist = new Whitelist();
-
-    public static class Whitelist {
-        @Comment({"Item IDs of items to be ignored when clearing, these items will not be cleared. Format: modid:itemid, ex: minecraft:diamond"})
-        public String[] ITEM_WHITELIST = new String[] { "minecraft:diamond", "minecraft:diamond_block", "minecraft:dragon_egg" };
     }
 
     @SubscribeEvent
