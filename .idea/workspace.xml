@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbfd5a2a-02fa-45ae-91c4-2fc1ab82b24f" name="Changes" comment="added kill itemcommand">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/MobSpawn.java" afterDir="false" />
+    <list default="true" id="fbfd5a2a-02fa-45ae-91c4-2fc1ab82b24f" name="Changes" comment="added mob limiter, prevent x_orb to spawn">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/RedStone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/TilesEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/IChunk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/ISpawn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/config/GeneralConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/config/GeneralConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/MobSpawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/MobSpawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/Xpdrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/Xpdrop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/Reference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/ITime.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,7 +343,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700801234402</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added mob limiter, prevent x_orb to spawn">
+      <option name="closed" value="true" />
+      <created>1700803181898</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700803181898</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -363,6 +380,7 @@
     <MESSAGE value="Reformat config" />
     <MESSAGE value="Added XPOrbs to clearlist removed items whitelist since it cause more lags." />
     <MESSAGE value="added kill itemcommand" />
-    <option name="LAST_COMMIT_MESSAGE" value="added kill itemcommand" />
+    <MESSAGE value="added mob limiter, prevent x_orb to spawn" />
+    <option name="LAST_COMMIT_MESSAGE" value="added mob limiter, prevent x_orb to spawn" />
   </component>
 </project>

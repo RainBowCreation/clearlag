@@ -12,11 +12,14 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.rainbowcreation.clearlag.utils.IString;
+import net.rainbowcreation.clearlag.utils.ITime;
 import net.rainbowcreation.clearlag.utils.Reference;
 
-import net.rainbowcreation.clearlag.utils.Time;
 import org.apache.logging.log4j.Logger;
 
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static net.rainbowcreation.clearlag.config.GeneralConfig.settings;
 
@@ -24,11 +27,12 @@ import static net.rainbowcreation.clearlag.config.GeneralConfig.settings;
 @Mod.EventBusSubscriber(modid = Reference.MODID)
 public class Main {
     public static Logger LOGGER = FMLLog.log;
+    public static Map<Long, Integer> redstoneCounts = new HashMap<>();
     private static int staticTime;
     private static int timeRemaining;
-    private static int[] timePrevious;
-    private static int Tick = 20;
-    private static int tick = Tick;
+    private static int previousTime = ITime.getCurrentTime()[2];
+    private static int tick = 20;
+    private static int tickRemaining = tick;
 
 
     @Mod.EventHandler
@@ -40,39 +44,41 @@ public class Main {
             LOGGER.info(txt);
         }
         LOGGER.info(IString.genHeader(Reference.NAME+":"+Reference.VERSION));
-        Time.TIME = Time.getTimeInSecond(settings.TIME);
-        staticTime = Time.TIME;
+        ITime.TIME = ITime.getTimeInSecond(settings.TIME);
+        staticTime = ITime.TIME;
         timeRemaining = staticTime;
-        Time.WARNING_TIME = Time.getTimeInSecond(settings.WARNING_TIME);
-        int i = Time.WARNING_TIME;
+        ITime.WARNING_TIME = ITime.getTimeInSecond(settings.WARNING_TIME);
+        int i = ITime.WARNING_TIME;
         while (i > 10) {
-            Time.WARNING_TIME_LIST.add(i);
+            ITime.WARNING_TIME_LIST.add(i);
             i/=2;
         }
         for (int j = 1; j <= 10; j++)
-             Time.WARNING_TIME_LIST.add(j);
-        timePrevious = Time.getCurrentTime();
+             ITime.WARNING_TIME_LIST.add(j);
     }
 
     @SubscribeEvent
     public static void worldTick(TickEvent.WorldTickEvent event) {
-        if (!settings.CLEAR_ITEM)
-            return;
-        if (tick > 0) {
-            tick--;
+        if (tickRemaining > 0) {
+           tickRemaining--;
+           return;
+        }
+        tickRemaining = tick;
+        int current = ITime.getCurrentTime()[2];
+        if (current == previousTime) {
             return;
         }
-        else
-            tick = Tick;
-        int[] time = Time.getCurrentTime();
-        if (time[2] == timePrevious[2])
+        previousTime = current;
+        if (settings.REDSTON_LIMIT > 0)
+            redstoneCounts.clear();
+        if (!settings.CLEAR_ITEM)
             return;
         World world = event.world;
-        PlayerList playerList = world.getMinecraftServer().getPlayerList();
+        MinecraftServer minecraftServer = world.getMinecraftServer();
+        PlayerList playerList = minecraftServer.getPlayerList();
         if (timeRemaining != 0) {
-            Time.alert(timeRemaining, "Clear Lag", "Items&XpOrb will be cleared in", playerList);
-            timeRemaining -= Time.getSubstractInSecond(time, timePrevious);
-            timePrevious = time;
+            ITime.alert(timeRemaining, "Clear Lag", "Items will be cleared in", playerList);
+            timeRemaining -= 1;
             return;
         }
         int amount = 0;
@@ -80,7 +86,6 @@ public class Main {
             entity.setDead();
             amount++;
         }
-        MinecraftServer minecraftServer = world.getMinecraftServer();
         minecraftServer.getCommandManager().executeCommand(minecraftServer, "kill @e[type=item] @e[type=xp_orb]");
         playerList.sendMessage(new TextComponentString(TextFormatting.BOLD + "[Clear Lag] " + TextFormatting.RESET + "Cleared " + TextFormatting.RED  + amount + TextFormatting.RESET + " items."));
         timeRemaining = staticTime;

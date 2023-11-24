@@ -8,7 +8,7 @@ import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Time {
+public class ITime {
     public static int TIME;
     public static int WARNING_TIME;
     public static List<Integer> WARNING_TIME_LIST = new ArrayList<>();
@@ -58,7 +58,7 @@ public class Time {
     public static Boolean alert(int timeRemaining, String prefix, String str, PlayerList playerList) {
         if (!WARNING_TIME_LIST.contains(timeRemaining))
             return false;
-        int[] lst = Time.secondToTime(timeRemaining);
+        int[] lst = ITime.secondToTime(timeRemaining);
         TextComponentString text = new TextComponentString(TextFormatting.BOLD + "[" + prefix + "] " + TextFormatting.RESET + str + " :");
         if (lst[0] > 0)
             text.appendSibling(new TextComponentString(" " + TextFormatting.RED + lst[0] + TextFormatting.RESET + " hours"));
@@ -75,7 +75,7 @@ public class Time {
         int timeRemaining = getSubstractInSecond(timeTarget, getCurrentTime());
         if (!WARNING_TIME_LIST.contains(timeRemaining))
             return false;
-        int[] lst = Time.secondToTime(timeRemaining);
+        int[] lst = ITime.secondToTime(timeRemaining);
         TextComponentString text = new TextComponentString(TextFormatting.BOLD + "[" + prefix + "]  " + TextFormatting.RESET + str + " :");
         if (lst[0] > 0)
             text.appendSibling(new TextComponentString(" " + TextFormatting.RED + lst[0] + TextFormatting.RESET + " hours"));
