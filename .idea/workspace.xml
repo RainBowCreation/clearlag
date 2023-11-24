@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbfd5a2a-02fa-45ae-91c4-2fc1ab82b24f" name="Changes" comment="Added XPOrbs to clearlist removed items whitelist since it cause more lags.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/Xpdrop.java" afterDir="false" />
+    <list default="true" id="fbfd5a2a-02fa-45ae-91c4-2fc1ab82b24f" name="Changes" comment="added kill itemcommand">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/MobSpawn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/Reference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/config/GeneralConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/config/GeneralConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700673187048</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added kill itemcommand">
+      <option name="closed" value="true" />
+      <created>1700801234402</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700801234402</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,6 +362,7 @@
     <MESSAGE value="Update to 1.1" />
     <MESSAGE value="Reformat config" />
     <MESSAGE value="Added XPOrbs to clearlist removed items whitelist since it cause more lags." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added XPOrbs to clearlist removed items whitelist since it cause more lags." />
+    <MESSAGE value="added kill itemcommand" />
+    <option name="LAST_COMMIT_MESSAGE" value="added kill itemcommand" />
   </component>
 </project>

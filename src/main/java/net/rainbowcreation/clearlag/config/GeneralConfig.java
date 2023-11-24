@@ -23,6 +23,11 @@ public class GeneralConfig {
         @Comment({"Set to false to disable item clearing"})
         public boolean CLEAR_ITEM = true;
 
+        @Comment({"Set to false to disable moister limit per chunk"})
+        public boolean MONSTER_LIMIT = true;
+
+        @Comment({"Amount of monster with same type limit per chunk default is 5"})
+        public int MONSTER_LIMIT_NUMBER = 5;
     }
 
     @SubscribeEvent
