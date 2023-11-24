@@ -1,8 +1,7 @@
 package net.rainbowcreation.clearlag;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.item.EntityXPOrb;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.PlayerList;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
@@ -71,18 +70,18 @@ public class Main {
         World world = event.world;
         PlayerList playerList = world.getMinecraftServer().getPlayerList();
         if (timeRemaining != 0) {
-            Time.alert(timeRemaining, "Clear Lag", "Items will be cleared in", playerList);
+            Time.alert(timeRemaining, "Clear Lag", "Items&XpOrb will be cleared in", playerList);
             timeRemaining -= Time.getSubstractInSecond(time, timePrevious);
             timePrevious = time;
             return;
         }
         int amount = 0;
         for (Entity entity : world.loadedEntityList) {
-            if (entity instanceof EntityItem || entity instanceof EntityXPOrb) {
-                entity.setDead();
-                amount++;
-            }
+            entity.setDead();
+            amount++;
         }
+        MinecraftServer minecraftServer = world.getMinecraftServer();
+        minecraftServer.getCommandManager().executeCommand(minecraftServer, "kill @e[type=item] @e[type=xp_orb]");
         playerList.sendMessage(new TextComponentString(TextFormatting.BOLD + "[Clear Lag] " + TextFormatting.RESET + "Cleared " + TextFormatting.RED  + amount + TextFormatting.RESET + " items."));
         timeRemaining = staticTime;
     }

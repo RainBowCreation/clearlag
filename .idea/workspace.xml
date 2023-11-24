@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbfd5a2a-02fa-45ae-91c4-2fc1ab82b24f" name="Changes" comment="Reformat config">
+    <list default="true" id="fbfd5a2a-02fa-45ae-91c4-2fc1ab82b24f" name="Changes" comment="Added XPOrbs to clearlist removed items whitelist since it cause more lags.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/Xpdrop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/config/GeneralConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/config/GeneralConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/Reference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/Reference.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +79,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/gg&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/k&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.18164062&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.61290324&quot;,
@@ -95,6 +95,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.server-extension [build]">
+    <configuration name="clearlag [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="extension [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -187,8 +209,9 @@
       <list>
         <item itemvalue="Gradle.server-extension [build]" />
         <item itemvalue="Gradle.extension [buildDependents]" />
-        <item itemvalue="Gradle.extension [init]" />
         <item itemvalue="Gradle.extension [buildNeeded]" />
+        <item itemvalue="Gradle.clearlag [clean]" />
+        <item itemvalue="Gradle.extension [init]" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700461673579</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added XPOrbs to clearlist removed items whitelist since it cause more lags.">
+      <option name="closed" value="true" />
+      <created>1700673187048</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700673187048</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,6 +355,7 @@
     <MESSAGE value="Update Config" />
     <MESSAGE value="Update to 1.1" />
     <MESSAGE value="Reformat config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformat config" />
+    <MESSAGE value="Added XPOrbs to clearlist removed items whitelist since it cause more lags." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added XPOrbs to clearlist removed items whitelist since it cause more lags." />
   </component>
 </project>
