@@ -4,6 +4,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityTNTPrimed;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -38,6 +39,11 @@ public class ISpawn {
             // Spawn the TNT entity in the world
             world.spawnEntity(tnt);
         }
+    }
+
+    public static void spawnXPOrb(World world, double x, double y, double z, int xp) {
+        EntityXPOrb xpOrb = new EntityXPOrb(world, x, y, z, xp);
+        world.spawnEntity(xpOrb);
     }
 
     public static void spawnBlockAsItem(World world, BlockPos pos, Block block) {

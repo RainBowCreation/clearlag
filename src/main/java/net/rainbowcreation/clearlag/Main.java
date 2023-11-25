@@ -81,11 +81,13 @@ public class Main {
             timeRemaining -= 1;
             return;
         }
-        int amount = 0;
+        int amount = world.loadedEntityList.size(); //0;
+        /*
         for (Entity entity : world.loadedEntityList) {
             entity.setDead();
             amount++;
         }
+         */
         minecraftServer.getCommandManager().executeCommand(minecraftServer, "kill @e[type=item] @e[type=xp_orb]");
         playerList.sendMessage(new TextComponentString(TextFormatting.BOLD + "[Clear Lag] " + TextFormatting.RESET + "Cleared " + TextFormatting.RED  + amount + TextFormatting.RESET + " items."));
         timeRemaining = staticTime;
