@@ -1,6 +1,8 @@
 package net.rainbowcreation.clearlag.utils;
 
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.chunk.Chunk;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +25,13 @@ public class IChunk {
 
         return resultMap;
     }
+
+    public static AxisAlignedBB getChunkBoundingBox(Chunk chunk) {
+        int chunkX = chunk.x * 16;
+        int chunkZ = chunk.z * 16;
+        return new AxisAlignedBB(chunkX, 0, chunkZ, chunkX + 16, 256, chunkZ + 16);
+    }
+
 
     public static int countTileEntitiesInChunk(net.minecraft.world.chunk.Chunk chunk) {
         int count = 0;

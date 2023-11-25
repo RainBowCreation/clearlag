@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbfd5a2a-02fa-45ae-91c4-2fc1ab82b24f" name="Changes" comment="Add redtone blocker and tils limiter">
+    <list default="true" id="fbfd5a2a-02fa-45ae-91c4-2fc1ab82b24f" name="Changes" comment="fix disable xp drop didnt trigger mending.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/IEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/RedStone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/RedStone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/Xpdrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/Xpdrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/ISpawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/ISpawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/MobSpawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/evnt/MobSpawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/IChunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/rainbowcreation/clearlag/utils/IChunk.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,7 +352,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700818974800</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix disable xp drop didnt trigger mending.">
+      <option name="closed" value="true" />
+      <created>1700902400212</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1700902400212</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,6 +391,7 @@
     <MESSAGE value="added kill itemcommand" />
     <MESSAGE value="added mob limiter, prevent x_orb to spawn" />
     <MESSAGE value="Add redtone blocker and tils limiter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add redtone blocker and tils limiter" />
+    <MESSAGE value="fix disable xp drop didnt trigger mending." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix disable xp drop didnt trigger mending." />
   </component>
 </project>

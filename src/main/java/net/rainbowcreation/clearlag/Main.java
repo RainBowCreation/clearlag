@@ -6,19 +6,22 @@ import net.minecraft.server.management.PlayerList;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-import net.rainbowcreation.clearlag.utils.IString;
-import net.rainbowcreation.clearlag.utils.ITime;
-import net.rainbowcreation.clearlag.utils.Reference;
+import net.rainbowcreation.clearlag.utils.*;
 
 import org.apache.logging.log4j.Logger;
 
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static net.rainbowcreation.clearlag.config.GeneralConfig.settings;
@@ -59,6 +62,8 @@ public class Main {
 
     @SubscribeEvent
     public static void worldTick(TickEvent.WorldTickEvent event) {
+        if (event.phase != TickEvent.Phase.START)
+            return;
         if (tickRemaining > 0) {
            tickRemaining--;
            return;
@@ -81,8 +86,26 @@ public class Main {
             timeRemaining -= 1;
             return;
         }
-        int amount = world.loadedEntityList.size(); //0;
+        int amount = 0;
+
+        WorldServer worldServer = (WorldServer) world;
         /*
+        Collection<Chunk> loadedChunks = worldServer.getChunkProvider().getLoadedChunks();
+        playerList.sendMessage(new TextComponentString("[Clear Lag] " + TextFormatting.RESET + "loadedchunks found " + TextFormatting.RED + loadedChunks.size() + TextFormatting.RESET + " chunks."));
+
+        // Iterate through all loaded chunks
+        for (Chunk chunk : loadedChunks) {
+            // Get all entities in the current chunk
+            List<Entity> entitiesInChunk = chunk.getWorld().getEntitiesWithinAABB(Entity.class, IChunk.getChunkBoundingBox(chunk));
+            int size = entitiesInChunk.size();
+            playerList.sendMessage(new TextComponentString("[Clear Lag] " + TextFormatting.RESET + "AMOUNT+= " + TextFormatting.RED + size + TextFormatting.RESET + " entities."));
+            amount += size;
+            // Group entities in the current chunk
+            IEntity.groupEntitiesByNameTag(world, entitiesInChunk, 10);
+        }
+
+        playerList.sendMessage(new TextComponentString("[Clear Lag] " + TextFormatting.RESET + "AMOUNT: " + TextFormatting.RED + amount + TextFormatting.RESET + " entities."));
+
         for (Entity entity : world.loadedEntityList) {
             entity.setDead();
             amount++;
