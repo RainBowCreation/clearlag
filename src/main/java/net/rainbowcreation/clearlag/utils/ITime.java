@@ -43,7 +43,13 @@ public class ITime {
     }
 
     public static int getSubstractInSecond(int[] x, int[] y) {
-        return getTimeInSecond(x) - getTimeInSecond(y);
+        int ix = getTimeInSecond(x);
+        int iy = getTimeInSecond(y);
+        if (ix >= iy)
+            return ix - iy;
+        int[] time = new int[3];
+        time[0] = 24;
+        return getTimeInSecond(time) + ix - iy;
     }
 
     public static String[] timeToString(int[] time) {
