@@ -33,6 +33,7 @@ public class MobSpawn {
                 event.setCanceled(true);
             }
         }
+        /*
          else if (entity.isCreatureType(EnumCreatureType.CREATURE, false)) {
             // Check the number of entities in the chunk
             List<Entity> entitys = world.getEntitiesWithinAABB(entity.getClass(), entity.getEntityBoundingBox().grow(16.0D));
@@ -53,7 +54,8 @@ public class MobSpawn {
                 event.setCanceled(true);
             }
 
-             */
+
         }
+         */
     }
 }

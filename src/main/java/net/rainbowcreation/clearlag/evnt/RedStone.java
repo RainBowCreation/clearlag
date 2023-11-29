@@ -16,7 +16,7 @@ import net.rainbowcreation.clearlag.utils.Reference;
 import static net.rainbowcreation.clearlag.config.GeneralConfig.settings;
 @Mod.EventBusSubscriber(modid = Reference.MODID)
 public class RedStone {
-
+    /*
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onRedstoneActivation(BlockEvent.NeighborNotifyEvent event) {
         event.setCanceled(true);
@@ -39,6 +39,7 @@ public class RedStone {
             ISpawn.removeBlockAndSpawnAsItem(world, pos);
         }
 
-         */
+
     }
+    */
 }

@@ -86,9 +86,9 @@ public class Main {
             timeRemaining -= 1;
             return;
         }
-        int amount = 0;
 
         WorldServer worldServer = (WorldServer) world;
+        int amount = worldServer.loadedEntityList.size();
         /*
         Collection<Chunk> loadedChunks = worldServer.getChunkProvider().getLoadedChunks();
         playerList.sendMessage(new TextComponentString("[Clear Lag] " + TextFormatting.RESET + "loadedchunks found " + TextFormatting.RED + loadedChunks.size() + TextFormatting.RESET + " chunks."));
