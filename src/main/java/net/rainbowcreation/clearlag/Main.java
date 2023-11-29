@@ -64,6 +64,8 @@ public class Main {
     public static void worldTick(TickEvent.WorldTickEvent event) {
         if (event.phase != TickEvent.Phase.START)
             return;
+        if (event.world.provider.getDimension() != 0)
+            return;
         if (tickRemaining > 0) {
            tickRemaining--;
            return;
